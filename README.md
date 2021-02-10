@@ -156,8 +156,8 @@ For Linux, the commands are all laid out here:
 
 ## Build Instructions
 
-    When building with support for PangolinViewer, please specify the following cmake options: 
-    **-DUSE_PANGOLIN_VIEWER=ON** and **-DUSE_SOCKET_PUBLISHER=OFF**.
+ When building with support for PangolinViewer, please specify the following cmake options: 
+ **-DUSE_PANGOLIN_VIEWER=ON** and **-DUSE_SOCKET_PUBLISHER=OFF**.
 
     cd ~/openvslam/
     mkdir build && cd build
@@ -171,8 +171,8 @@ For Linux, the commands are all laid out here:
         ..
     make -j4
 
-    When building with support for SocketViewer, please specify the following cmake options: 
-    **-DUSE_PANGOLIN_VIEWER=OFF** and **-DUSE_SOCKET_PUBLISHER=ON**.
+ When building with support for SocketViewer, please specify the following cmake options: 
+ **-DUSE_PANGOLIN_VIEWER=OFF** and **-DUSE_SOCKET_PUBLISHER=ON**.
 
     cd ~/openvslam/
     mkdir build && cd build
@@ -208,9 +208,8 @@ Here onwards scroll down and check the [official documentation](https://openvsla
 
 ## Launching socketviewer
 
-    cd ~/openvslam/viewer
-    ls
-    node app.js
+    $ cd ~/openvslam/viewer
+    $ node app.js
 
 The output should be as follows: 
 
