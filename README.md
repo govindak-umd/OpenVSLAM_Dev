@@ -218,7 +218,7 @@ The output should be as follows:
 
 Open a new browser tab and type in :
 
-    http://localhost:3001/.
+    http://localhost:3001/
     
 You should now be able to see the Socket Viewer. Continue with **Simple Tutorials** [here](https://openvslam.readthedocs.io/en/master/simple_tutorial.html).
 
