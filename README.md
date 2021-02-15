@@ -251,3 +251,16 @@ Now, to download and unzip anything from this directory, execute the following c
     $ unzip aist_factory_A.zip 
 
 You can see the extracted folder in the build directory now.
+
+## Running on a standard dataset
+
+### Kitti Dataset
+
+The dataset can be downloaded from [here](http://www.cvlibs.net/datasets/kitti/eval_odometry.php). Download the greyscale one. 
+
+Paste the folders in the right directory. I pasted the kitti dataset in the **openvslam/example/kitti/** directory. You can see the sequences of images in them. To launch, start the socket viewer as shown previously. Then, enter the following commands:
+
+    $ cd ~/openvslam/build
+
+    $ ./run_kitti_slam -v ../build/orb_vocab/orb_vocab.dbow2 -d ../example/kitti/dataset/sequences/00/ -c ../example/kitti/KITTI_mono_00-02.yaml
+
