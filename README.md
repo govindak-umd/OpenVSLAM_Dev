@@ -293,7 +293,7 @@ Open a new terminal, and Start roscore
     
 Open a new terminal
     
-    $ source /path/to/openvslam/ros/devel/setup.bash
+    $ source ~/openvslam/ros/devel/setup.bash
     $ rosrun publisher video -m /path/to/video.mp4
 
 Republish the ROS topic to **/camera/image_raw**
