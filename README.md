@@ -296,8 +296,9 @@ Open a new terminal
     $ source ~/openvslam/ros/devel/setup.bash
     $ rosrun publisher video -m /path/to/video.mp4
 
-Republish the ROS topic to **/camera/image_raw**
+Open a new terminal, Republish the ROS topic to **/camera/image_raw**
 
+    $ source ~/openvslam/ros/devel/setup.bash
     $ rosrun image_transport republish raw in:=/video/image_raw raw out:=/camera/image_raw
    
 Open a new terminal
