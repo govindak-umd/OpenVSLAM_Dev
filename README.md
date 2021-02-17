@@ -268,3 +268,44 @@ Open a new terminal
 
     $ ./run_kitti_slam -v ../build/orb_vocab/orb_vocab.dbow2 -d ../example/kitti/dataset/sequences/00/ -c ../example/kitti/KITTI_mono_00-02.yaml
 
+
+## Running on ROS
+
+## Launching socketviewer
+
+All commands are followed as per [this](https://openvslam.readthedocs.io/en/master/ros_package.html)
+
+    $ cd ~/openvslam/viewer
+    $ node app.js
+
+The output should be as follows: 
+
+    WebSocket: listening on *:3000
+    HTTP server: listening on *:3001
+
+Open a new browser tab and type in :
+
+    http://localhost:3001/
+    
+Open a new terminal, and Start roscore
+
+    $ roscore
+    
+Open a new terminal
+    
+    $ source /path/to/openvslam/ros/devel/setup.bash
+    $ rosrun publisher video -m /path/to/video.mp4
+
+Republish the ROS topic to **/camera/image_raw**
+
+    $ rosrun image_transport republish raw in:=/video/image_raw raw out:=/camera/image_raw
+   
+Open a new terminal
+    
+    $ source ~/openvslam/ros/devel/setup.bash
+    $ rosrun openvslam run_slam -v build/orb_vocab/orb_vocab.dbow2 -c /path/to/config.yaml
+    
+Open a new terminal
+    
+    $ source ~/openvslam/ros/devel/setup.bash
+    $ rosrun openvslam run_localization -v build/orb_vocab/orb_vocab.dbow2 -c /path/to/config.yaml --map-db build/map.msg
