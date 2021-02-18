@@ -310,3 +310,10 @@ Open a new terminal
     
     $ source ~/openvslam/ros/devel/setup.bash
     $ rosrun openvslam run_localization -v build/orb_vocab/orb_vocab.dbow2 -c /path/to/config.yaml --map-db build/map.msg
+    
+## Converting from .msg file to .csv
+
+Run the following script from the example folder
+
+    $ python3 msg2pcd.py ~/openvslam/build/map.msg output_file.csv
+
