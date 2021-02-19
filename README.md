@@ -1,5 +1,6 @@
 # OpenVSLAM_Dev
 
+This repository has the process to setup OpenVSLAM and how to use it.
 
 ## System:
 
