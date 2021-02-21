@@ -4,7 +4,7 @@ This repository has the process to setup OpenVSLAM and how to use it.
 
 ## System:
 
-The below code is tested on 
+The below code is tested on:
 
  - Ubuntu 18.05 LTS
  - NVIDIA GTX 950M
