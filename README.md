@@ -311,26 +311,28 @@ Open a new terminal
     
     $ source ~/openvslam/ros/devel/setup.bash
     $ rosrun openvslam run_localization -v build/orb_vocab/orb_vocab.dbow2 -c /path/to/config.yaml --map-db build/map.msg
-   
-## Visualizing using open3d and .msg file
+
+## Visualization and using point cloud data
+
+#### Visualizing using open3d and .msg file
 
 Run from the ~/openvslam/example folder
 
     $ python3 visualize_openvslam_map.py ~/openvslam/build/map.msg
 
-## Converting from .msg file to .csv
+#### Converting from .msg file to .csv
 
 Run from the ~/openvslam/example folder
 
     $ python3 msg2csv.py ~/openvslam/build/map.msg output_file.csv
 
-## Converting from .msg file to .pcd 
+#### Converting from .msg file to .pcd 
 
 Run from the ~/openvslam/example folder
 
     $ python3 msg2pcd.py ~/openvslam/build/map.msg output_file.pcd
     
-## Converting from .csv file to .ply file
+#### Converting from .csv file to .ply file
 
 Run from the ~/openvslam/example folder
 
