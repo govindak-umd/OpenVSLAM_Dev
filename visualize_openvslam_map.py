@@ -25,18 +25,18 @@ with open(sys.argv[1], "rb") as f:
     upacked_msg = msgpack.Unpacker(f)
     packed_msg = upacked_msg.unpack()
 
-print(packed_msg)
+print(packed_msg.keys())
 
-keyframes = packed_msg["keyframes"]
-landmarks = packed_msg["landmarks"]
+keyframes = packed_msg[b'keyframes']
+landmarks = packed_msg[b'landmarks']
 
 # FILL IN KEYFRAME POINTS(ODOMETRY) TO ARRAY
 keyframe_points = []
 keyframe_points_color = []
 for keyframe in keyframes.values():
     # get conversion from camera to world
-    trans_cw = np.matrix(keyframe["trans_cw"]).T
-    rot_cw = R.from_quat(keyframe["rot_cw"]).as_matrix()
+    trans_cw = np.matrix(keyframe[b'trans_cw']).T
+    rot_cw = R.from_quat(keyframe[b'rot_cw']).as_matrix()
     # compute conversion from world to camera
     rot_wc = rot_cw.T
     trans_wc = -rot_wc * trans_cw
@@ -51,11 +51,12 @@ keyframe_points_color = np.repeat(np.array([[0., 1., 0.]]),
 landmark_points = []
 landmark_points_color = []
 for lm in landmarks.values():
-    landmark_points.append(lm["pos_w"])
+    print(lm.keys())
+    landmark_points.append(lm[b'pos_w'])
     landmark_points_color.append([
-        abs(lm["pos_w"][1]) * 4,
-        abs(lm["pos_w"][1]) * 2,
-        abs(lm["pos_w"][1]) * 3
+        abs(lm[b'pos_w'][1]) * 4,
+        abs(lm[b'pos_w'][1]) * 2,
+        abs(lm[b'pos_w'][1]) * 3
     ])
 
 landmark_points = np.array(landmark_points)
