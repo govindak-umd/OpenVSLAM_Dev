@@ -327,6 +327,7 @@ Run from the ~/openvslam/example folder
 ## Converting from .msg file to .pcd 
 
 Run from the ~/openvslam/example folder
+
     $ python3 msg2pcd.py ~/openvslam/build/map.msg output_file.pcd
     
 ## Converting from .csv file to .ply file
