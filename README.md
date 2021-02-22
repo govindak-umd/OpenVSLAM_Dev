@@ -314,13 +314,23 @@ Open a new terminal
    
 ## Visualizing using open3d and .msg file
 
-Run the following script from the example folder
+Run from the ~/openvslam/example folder
 
     $ python3 visualize_openvslam_map.py ~/openvslam/build/map.msg
 
 ## Converting from .msg file to .csv
 
-Run the following script from the example folder
+Run from the ~/openvslam/example folder
 
-    $ python3 msg2pcd.py ~/openvslam/build/map.msg output_file.csv
+    $ python3 msg2csv.py ~/openvslam/build/map.msg output_file.csv
 
+## Converting from .msg file to .pcd 
+
+Run from the ~/openvslam/example folder
+    $ python3 msg2pcd.py ~/openvslam/build/map.msg output_file.pcd
+    
+## Converting from .csv file to .ply file
+
+Run from the ~/openvslam/example folder
+
+    $ python3 csv2ply.py
