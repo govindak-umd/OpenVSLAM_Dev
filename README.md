@@ -312,27 +312,43 @@ Open a new terminal
     $ source ~/openvslam/ros/devel/setup.bash
     $ rosrun openvslam run_localization -v build/orb_vocab/orb_vocab.dbow2 -c /path/to/config.yaml --map-db build/map.msg
 
-## Visualization and using point cloud data
+## Visualization and using point cloud data on a custom video
 
-#### Visualizing using open3d and .msg file
+Paste the custom test_video.mp4 in ~/openvslam/example directory and run the following command while SocketViewer is running:
+
+    $ ./run_video_slam -v ../build/orb_vocab/orb_vocab.dbow2 -m ../example/test_video.mp4 -c ../build/aist_factory_A_1/config.yaml --map-db ~/openvslam/build/test_video_map.msg
+    
+After running OpenVSLAM, complete the slam map generation by clicking the **terminate** button in SocketViewer. Following this, find the generated **test_video_map.msg** file. Run the following command in the terminal from the **/example** folder:
+
+    $ python3 msg2csv.py ~/openvslam/build/test_video_map.msg output_file.csv
+
+This will save the msg into a csv file format. Now, this can be visualized using open3d. Run the following command in the terminal from the **/example** folder:
+
+    $ python3 csv2ply.py
+
+The visualization can be seen now.
+
+## General commands to run each program
+
+### Visualizing using open3d and .msg file
 
 Run from the ~/openvslam/example folder
 
     $ python3 visualize_openvslam_map.py ~/openvslam/build/map.msg
 
-#### Converting from .msg file to .csv
+### Converting from .msg file to .csv
 
 Run from the ~/openvslam/example folder
 
     $ python3 msg2csv.py ~/openvslam/build/map.msg output_file.csv
 
-#### Converting from .msg file to .pcd 
+### Converting from .msg file to .pcd 
 
 Run from the ~/openvslam/example folder
 
     $ python3 msg2pcd.py ~/openvslam/build/map.msg output_file.pcd
     
-#### Converting from .csv file to .ply file
+### Converting from .csv file to .ply file
 
 Run from the ~/openvslam/example folder
 
