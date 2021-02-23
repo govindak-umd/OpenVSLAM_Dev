@@ -37,7 +37,7 @@ print(np.asarray(ply.points))
 
 # Visualize the cloud points
 o3d.visualization.draw_geometries([ply],
-                                  zoom=2.0,
+                                  zoom=0.05,
                                   front=[0.4257, -0.2125, -0.8795],
                                   lookat=[2.6172, 2.0475, 1.532],
                                   up=[-0.0694, -0.9768, 0.2024])
