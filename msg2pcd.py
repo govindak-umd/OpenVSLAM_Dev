@@ -5,7 +5,7 @@ usage;
 
 Run from the ~/openvslam/example folder
 
-python3 msg2pcd.py ~/openvslam/build/map.msg output_file.pcd
+python3 msg2pcd.py ~/openvslam/build/test_video_map.msg output_file.pcd
 """
 
 import msgpack
