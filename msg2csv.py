@@ -9,7 +9,7 @@ For a copy, see <https://github.com/xdspacelab/openvslam/blob/master/LICENSE>.
 
 # To run : 
 # Run from the ~/openvslam/example folder
-# python3 msg2pcd.py ~/openvslam/build/map.msg output_file.csv
+# python3 msg2csv.py ~/openvslam/build/map.msg output_file.csv
 
 import sys
 import msgpack
