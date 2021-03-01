@@ -253,22 +253,37 @@ Now, to download and unzip anything from this directory, execute the following c
 
 You can see the extracted folder in the build directory now.
 
-## Running on a standard dataset
-
-### Kitti Dataset
+## Running on a standard dataset - Kitti Dataset
 
 The dataset can be downloaded from [here](http://www.cvlibs.net/datasets/kitti/eval_odometry.php). Download the greyscale one. 
 
 Paste the folders in the right directory. I pasted the kitti dataset in the **openvslam/example/kitti/** directory. You can see the sequences of images in them. To launch, start the socket viewer as shown previously. Then, enter the following commands:
 
     $ cd ~/openvslam/build
-   
+
+Launching socketviewer
+
+All commands are followed as per [this](https://openvslam.readthedocs.io/en/master/ros_package.html)
+
+    $ cd ~/openvslam/viewer
+    $ node app.js
+
+The output should be as follows: 
+
+    WebSocket: listening on *:3000
+    HTTP server: listening on *:3001
+
+Open a new browser tab and type in :
+
+    http://localhost:3001/
+    
 Open a new terminal
 
     $ sudo -s
 
-    $ ./run_kitti_slam -v ../build/orb_vocab/orb_vocab.dbow2 -d ../example/kitti/dataset/sequences/00/ -c ../example/kitti/KITTI_mono_00-02.yaml
+    $ ./run_kitti_slam -v ../build/orb_vocab/orb_vocab.dbow2 -d ../example/kitti/dataset/sequences/00/ -c ../example/kitti/KITTI_mono_00-02.yaml -p kitti_map.msg
 
+Press **Terminate** on socketviewer to stop and save the map msg file.
 
 ## Running on ROS
 
