@@ -1,0 +1,9 @@
+ideas:
+
+callibrate camera
+Perform Visual slam at an area
+Get the feed to publish to ROS
+Take the generated cloud points 
+Try to get a map
+Using any form of input  Work out a way to use these points and deploy a search algorithm between a start and an end goal
+
